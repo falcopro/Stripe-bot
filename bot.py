@@ -12,13 +12,16 @@ from telegram.ext import (
 )
 import stripe
 
-# Clave secreta de Stripe (usa la tuya)
-STRIPE_SECRET_KEY = "51R3R0BFQ9QtI2wIZXIK7Dv17SKdiqwGX2gh4gFNph3Z84Kmtj8KVt9mIGJrgiSvOf8qGUcIhUMKrKM5y2CSwUKEk00VcWISsmJ"
+from dotenv import load_dotenv
+import os
+import stripe
 
+load_dotenv()
+
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 stripe.api_key = STRIPE_SECRET_KEY
 
-# Token de tu bot Telegram
-TELEGRAM_BOT_TOKEN = "8010800104:AAGDJmu3isTWxwqUNelDpnXzQdyt2ehaU1w"
+TELEGRAM_BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # Estados para la conversación
 ENTER_CARD = 1
