@@ -1,0 +1,2 @@
+python-telegram-bot==20.3
+stripe==5.11.0
